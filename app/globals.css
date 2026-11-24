@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; background: #101715; color: #f1f3e9; font-family: "Segoe UI", Arial, sans-serif; }
+header { display: flex; align-items: center; gap: .65rem; padding-bottom: 1.4rem; border-bottom: 1px solid #41504a; font-weight: 700; }
+.mark, em, .label { color: #c5efa3; }
+.mark { font-size: 2rem; line-height: 1; }
+.game { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(2rem,5vw,5rem); margin-block: 3rem; }
+.photo img { width: 100%; height: clamp(24rem,58vh,38rem); object-fit: cover; border-radius: .65rem; }
+h1 { font: 500 clamp(3.5rem,7vw,6rem)/1 Georgia, serif; letter-spacing: -.05em; margin: 1rem 0; }
+.scene-title, .results h1 { font-size: clamp(2.6rem,5vw,4.4rem); }
+.panel p:not(.label), .results > p:not(.label) { color: #c1cec6; line-height: 1.65; max-width: 37rem; }
+.label { font: 600 .9rem/1.5 monospace; letter-spacing: .08em; text-transform: uppercase; }
+.primary { background: #c5efa3; color: #182019; border-radius: .4rem; padding: .8rem 1.4rem; margin-top: 1.6rem; font-weight: 700; cursor: pointer; }
+.primary:disabled { opacity: .45; cursor: default; }
+fieldset { margin-top: 1.5rem; }
+legend { margin-bottom: .65rem; font-weight: 600; }
+.choices { display: flex; gap: .4rem; flex-wrap: wrap; }
+.choices label { position: relative; cursor: pointer; }
+.choices input { position: absolute; opacity: 0; }
+.choices span { display: block; padding: .6rem .8rem; border: 1px solid #738279; border-radius: .35rem; }
+.choices input:checked + span { background: #c5efa3; color: #101715; }
+.choices input:focus-visible + span, button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.results { max-width: 45rem; margin: 3rem auto; }
+.results ol { margin-top: 1.5rem; }
+.results li { display: flex; align-items: center; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid #41504a; }
+.results li img { width: 4rem; height: 3rem; object-fit: cover; border-radius: .25rem; }
+.results li strong { margin-left: auto; color: #c5efa3; }
+@media (max-width: 760px) {
+  .game { grid-template-columns: 1fr; margin-block: 1.5rem; gap: 1.5rem; }
+  .photo img { height: clamp(12rem,30vh,20rem); }
+}
